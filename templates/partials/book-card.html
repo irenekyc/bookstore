@@ -1,0 +1,21 @@
+<a href="{% url 'books:book_details' book_slug=book.title %}" >
+    <div class="book-card">
+        <div class="book-card-image">
+            {% if book.thumbnail != "" %}
+                <img src="{{ book.thumbnail }}" alt="{{ book.title}}">
+            {% else %}
+                {% include '../partials/image_unavailable.html' %}
+            {% endif %}
+        </div>
+        <div class="book-card-details">
+            <div class="title">
+                <h2> {{ book.title}}</h2>
+            </div>
+            <div class="book-card-details-price">
+                <span> {{ book.price }}</span>
+                {% include './review-stars.html' with rating=book.rating%}
+            </div>
+        </div>
+
+    </div>
+</a>

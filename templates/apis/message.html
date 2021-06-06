@@ -1,0 +1,13 @@
+{% extends '../base.html' %}
+{% block title %}
+Create a Book
+{% endblock %}
+{% block content %}
+<h1>Start creating a book</h1>
+
+<p>  {{ msg }}</p>
+<a href="{% url 'apis:create' %}"><button>Create another book</button></a>
+<button> Back home</button>
+
+
+{% endblock %}

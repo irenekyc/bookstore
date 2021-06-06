@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+{% block title %}
+Welcome to Book Store
+{% endblock %}
+{% block localstyles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'book_details.css' %}" />
+{% endblock %}
+{% block content %}
+{% if not error %}
+{% include '../partials/back_icon.html' with link="/" location="Home" %}
+<div class="book-details-grid">
+    <h1>{{book.title}}</h1>
+    <div class="book-rating-row">
+        {% if book.rating > 0 %}
+            {% include '../partials/review-stars.html' with rating=book.rating num_review=book.num_reviews %}
+        {% else %}
+        {% endif %}
+    </div>
+    <div class="book-details-content">
+        <div class="book-details-image">
+            {% if book.thumbnail != "" %}
+                <img src="{{book.thumbnail}}" alt="{{ book.title }}">
+            {% else %}
+                {% include '../partials/image_unavailable.html' %}
+            {% endif %}
+        </div>
+        <div class="book-details-description">
+            <p>{{ book.description }}</p>
+            <p>€ {{ book.price }}</p>
+            {% if book.availablility %}
+            <p class="color-success"> In Stock</p>
+            <button class="btn btn-add-to-cart" disabled>Cart Function coming soon</button>
+            {% else %}
+            <p class="color-error"> Out of Stock</p>
+            {% endif %}
+            
+
+        </div>
+    </div>
+    <div class="book-recommendation-row">
+        <h2>Books you might like</h2>
+    </div>
+</div>
+
+{% else %}
+    <h1> Not Found </h1>
+    
+{% endif %}
+{% endblock%}

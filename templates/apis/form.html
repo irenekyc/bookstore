@@ -1,0 +1,55 @@
+{% extends '../base.html' %}
+{% block title %}
+Create a Book
+{% endblock %}
+{% block content %}
+<h1>Start creating a book</h1>
+
+<form method="post" action="/apis/create">
+    <div class="form-create">
+    {% csrf_token %}
+    <div class="input-block">
+        <label for="book-title">Book Title</label>
+        <input type="text" id="book-title" name="title" placeholder="Book Title" required>
+    </div>
+    <div class="input-block">
+        <label for="book-price">Price (€)</label>
+        <input type="number" id="book-price" name="price" placeholder="Book Price" required>
+    </div>
+    <div class="input-block">
+        <label for="book-category">Category</label>
+        <input type="text" name="category" placeholder="Category" required>
+    </div>
+    <div class="input-block">
+        <label for="book-rating">
+            Previous Rating (1 - 5)
+        </label>
+        <input type="number" name="rating" placeholder="previous rating" value=0 max=5>
+    </div>
+    <div class="input-block">
+        <label for="num_reviews">
+            No. of reviews
+        </label>
+        <input type="number" id="num_reviews" name="num_reviews" placeholder="Number of reviews" value=0 required>
+    </div>
+    <div class="input-block">
+        <label for="book-thumbnail">Book Cover Image (link)</label>
+        <input type="text" id="book-thumbnail" name="thumbnail" placeholder="https://">
+    </div>
+    <div class="input-block">
+        <label for="book-description">Book Summary</label>
+        <textarea name="description" id="book-description" placeholder="Book Description">
+        </textarea>
+    </div>
+    <div class="input-block">
+        <label for="book-availability">Availability</label>
+        <input type="radio" id="in-stock" name="availability" value="True" checked>
+        <label for="in-stock">In Stock</label>
+        <input type="radio" id="out-of-stock" name="availability" value="False">
+        <label for="out-of-stock">Out of Stock</label>
+    </div>
+    <input type="submit" value="Confirm">
+    </div>
+</form>
+<a href="{% url 'apis:upload'%}"><button>Upload a file?</button></a>
+{% endblock %}

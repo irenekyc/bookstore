@@ -1,0 +1,69 @@
+.book-details-grid{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.book-details-grid h1{
+    width: 100%;
+}
+
+.book-details-content{
+    width: 100%;
+    margin: 2rem auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.book-details-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    min-height: 300px;
+    min-width: 300px !important;
+    max-width: 350px;
+    padding: 1rem;
+}
+
+.book-details-image img{
+    width: 100%;
+    height: auto;
+}
+
+.book-details-description{
+    padding: 1rem;
+    flex:1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.book-details-description *{
+    margin: 0.5rem 0;
+}
+
+.color-success{
+    color: green !important;
+}
+
+.color-error{
+    color: red !important;
+}
+
+.btn{
+    padding: 6px 20px;
+    border: none;
+    background: none;
+    border-radius: 5px;
+}
+
+.btn-add-to-cart{
+    background:blue;
+    color: white;
+}

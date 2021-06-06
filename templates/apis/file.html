@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+{% block title %}
+Upload a file
+{% endblock %}
+{% block content %}
+<div class="section-upload">
+    <div class="upload-intro">
+        <h1> Upload A file </h1>
+        <h3> Accept only xlxs format</h3>
+        <ul>
+            <li> Make sure that the file includes all required fields (title, price, category)</li>
+            {% load static %}
+            <li>Download the template <a href="{% static '/upload_template.xlsx' %}" download>here</a></li>
+        </ul>
+    </div>
+    <p class="message">{{ msg}} </p>
+
+    <form method="post" action="/apis/upload" enctype="multipart/form-data">
+        <div class="form-upload">
+            {% csrf_token %}
+            <input type="file" name="file" id="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+            <input type="submit" value="Upload">
+        </div>
+    </form>
+    <a href="{% url 'apis:create' %}"><button>Create record instead</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% block title %}
+Welcome to Book Store
+{% endblock %}
+{% block localstyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'book_card.css' %}">
+{% endblock %}
+{% block content %}
+<h1>Name of category</h1>
+<div class="book-cards-grid">
+    {% for book in books %}
+        {% include '../partials/book-card.html' with book=book %}
+    {% endfor %}
+</div>
+{% endblock%}

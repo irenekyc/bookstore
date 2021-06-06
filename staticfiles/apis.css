@@ -1,0 +1,68 @@
+.form-create{
+    width: 100%;
+    max-width:600px;
+    font-size: 14px;
+    margin: 2rem 0;
+}
+
+label{
+    font-weight: 600px;
+    width:120px;
+    padding-right: 1rem;
+}
+
+input{
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    background: none;
+    padding: 4px 10px;
+    margin: 0.25rem;
+    flex:1;
+}
+
+input[type="submit"]{
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    background: lightgreen;
+    font-size: 16px;
+    font-weight: 600px;
+}
+
+button{
+    padding: 6px 14px;
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+}
+
+.input-block{
+    margin: 0.25rem;
+    display:flex;
+    align-items:center;
+    width:100%;
+}
+
+.half-block{
+    width: 50%;
+}
+
+textarea{
+    flex:1;
+    padding: 4px 10px;
+    min-height: 120px;
+}
+
+.section-upload >*{
+    margin-bottom: 1rem;
+}
+
+.upload-intro a{
+    color: red;
+
+}
+
+
+.message{
+    font-size: 1.1rem;
+    font-weight: 700
+}
