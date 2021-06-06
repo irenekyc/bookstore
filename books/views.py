@@ -4,7 +4,7 @@ from apis.models import Book
 def index(request):
     books = Book.objects.all()
     return render(request, "books/index.html", {
-        'books': books
+        'books': books[0:10]
     })
 
 def category(request):
@@ -21,8 +21,7 @@ def category_list(request, category_name):
 
 def book_details(request, book_slug):
     try:
-        book = Book.objects.get(title=book_slug)
-        print(book.availablility)
+        book = Book.objects.get(slug=book_slug)
         return render(request, "books/details.html", {
             'book': book
         })

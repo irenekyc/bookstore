@@ -22,6 +22,14 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.book-cover{
+    height: 180px;
+    width: auto;
+    max-width: 180px;
 }
 
 .book-card-details{
@@ -31,7 +39,7 @@
 }
 
 .book-card-details h2{
-    font-size: 1.2rem;
+    font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

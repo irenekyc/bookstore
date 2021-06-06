@@ -13,14 +13,16 @@ Welcome to Book Store
     <h1>{{book.title}}</h1>
     <div class="book-rating-row">
         {% if book.rating > 0 %}
+        <div class="review-stars-row flex-end">
             {% include '../partials/review-stars.html' with rating=book.rating num_review=book.num_reviews %}
+        </div>
         {% else %}
         {% endif %}
     </div>
     <div class="book-details-content">
         <div class="book-details-image">
             {% if book.thumbnail != "" %}
-                <img src="{{book.thumbnail}}" alt="{{ book.title }}">
+                <img src="http://books.toscrape.com/{{book.thumbnail}}" alt="{{ book.title }}">
             {% else %}
                 {% include '../partials/image_unavailable.html' %}
             {% endif %}

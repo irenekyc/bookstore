@@ -1,8 +1,8 @@
-<a href="{% url 'books:book_details' book_slug=book.title %}" >
+<a href="{% url 'books:book_details' book_slug=book.slug %}" >
     <div class="book-card">
         <div class="book-card-image">
             {% if book.thumbnail != "" %}
-                <img src="{{ book.thumbnail }}" alt="{{ book.title}}">
+                <img class="book-cover" src="http://books.toscrape.com/{{ book.thumbnail }}" alt="{{ book.title}}">
             {% else %}
                 {% include '../partials/image_unavailable.html' %}
             {% endif %}
@@ -12,8 +12,10 @@
                 <h2> {{ book.title}}</h2>
             </div>
             <div class="book-card-details-price">
-                <span> {{ book.price }}</span>
-                {% include './review-stars.html' with rating=book.rating%}
+                <span> €{{ book.price }}</span>
+                <div class="review-stars-row flex-end">
+                     {% include './review-stars.html' with rating=book.rating%}
+                </div>
             </div>
         </div>
 

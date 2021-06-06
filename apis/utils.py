@@ -1,5 +1,6 @@
 from openpyxl import load_workbook
 from .models import Book
+from slugify import slugify
 
 def validate_data(data):
     book = data
@@ -61,9 +62,12 @@ def handle_file(file):
 
             ## Check if current book exist
             has_current_book = Book.objects.filter(title = validated_book['title'])
+            slug = slugify(validated_book['title'])
+            print(slug)
 
             if has_current_book.count() > 0:
                 has_current_book.update(
+                    slug=slug,
                     title=validated_book['title'],
                     price=validated_book['price'],
                     description = validated_book['description'],
@@ -75,6 +79,7 @@ def handle_file(file):
                 update = update+1
             else:
                 new_book = Book(
+                    slug=slug,
                     title=validated_book['title'],
                     price=validated_book['price'],
                     description = validated_book['description'],
@@ -100,8 +105,10 @@ def check_form(form):
 
 def save_record(record):
     has_current_book = Book.objects.filter(title = record['title'])
+    slug = slugify(record['title'])
     if has_current_book.count() > 0:
         has_current_book.update(
+                    slug=slug,
                     title=record['title'],
                     price=record['price'],
                     description = record['description'],
@@ -113,6 +120,7 @@ def save_record(record):
         return f"{record['title']} is updated in the database"
     else:
         new_book = Book(
+                    slug=slug,
                     title=record['title'],
                     price=record['price'],
                     description = record['description'],

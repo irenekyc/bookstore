@@ -3,6 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class Book(models.Model):
+    slug = models.CharField(max_length = 200, default="")
     title = models.CharField(max_length = 200)
     description = models.TextField(null=True)
     category = models.CharField(max_length=100, default="N/A")
