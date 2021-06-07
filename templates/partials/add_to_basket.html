@@ -16,13 +16,12 @@ const init = ()=>{
             booksInCart = JSON.parse(books)
             if (booksInCart.includes(book_slug)){
                 currentBookInCart = true
-                loadText()
             } else{
                 currentBookInCart = false
-                loadText()
             }
         } 
     }
+    loadText()  
 }
 window.addEventListener('DOMContentLoaded', init)
 const loadText = ()=>{

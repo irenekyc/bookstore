@@ -9,7 +9,7 @@ Welcome to Book Store
     <h1>{{book.title}}</h1>
     <div class="book-rating-row">
         {% if book.rating > 0 %}
-        <div class="review-stars-row flex-end">
+        <div class="review-stars-row flex-start">
             {% include '../partials/review-stars.html' with rating=book.rating num_review=book.num_reviews %}
         </div>
         {% else %}
@@ -38,6 +38,7 @@ Welcome to Book Store
     </div>
     <div class="book-recommendation-row">
         <h2>Books you might like</h2>
+        <p>Coming Soon</p>
     </div>
 </div>
 

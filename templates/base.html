@@ -17,14 +17,31 @@
                 <li><a href="{% url 'apis:create' %}">Recommend a book</a></li>
             </ul>
             <ul>
-                <li>About</li>
+                <li><a href="{% url 'books:about' %}">About</a></li>
             </ul>
         </nav>
         <main>
             {% block content %}
             {% endblock %}
+            <div class="banner-cookie" id="cookie-banner">
+                <h3>Cookies</h3>
+                <p>This Website use cookie to store your add to cart details
+                Noted that it is a practise website, we will not ask you for any personal information
+                </p>
+                <button onclick="cookie_notified()">Do not show this again</button>
+            </div>
         </main>
-
     </body>
-
+    <script>
+        const showCookieBanner = ()=>{
+            if (!document.cookie.includes('book_store_cookie_consent')){
+                document.getElementById('cookie-banner').style.visibility = 'visible'
+            }
+        }
+        window.addEventListener('DOMContentLoaded', showCookieBanner)
+        const cookie_notified = ()=>{
+            document.cookie = 'book_store_cookie_consent=true'
+            document.getElementById('cookie-banner').style.visibility = 'hidden'
+        }
+    </script>
 </html>

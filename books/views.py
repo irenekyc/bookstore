@@ -36,3 +36,6 @@ def book_details(request, book_slug):
         return render(request, "books/details.html", {
             'error': 'Book Not Found'
         })
+
+def about(request):
+    return render(request, "about.html")

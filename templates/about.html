@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+About BookStore
+{% endblock %}
+{% block content %}
+<div class="page-about">
+    <h1>About This Site</h1>
+    <p>
+    Hi! My name is Irene, this is my first Django practice project for a book e-commerce store.
+    I use Beautiful soup to scrape the data from toscrape.com.
+    </p>
+    <p>
+    Backend and frontend are Django python
+    </p>
+
+    <p>Last update: 7 June 2021</p>
+
+    <div>
+        <h4>Some current features:</h4>
+        <ul class="list-finished">
+            <li>Django Book Object</li>
+            <li>Create a book with form, send the data using API to the backend</li>
+            <li>Upload an excel to bulk update books</li>
+            <li>Add book to basket using cookies</li>
+        </ul>
+    </div>
+
+    <div>
+        <h4>Upcoming features:</h4>
+        <ul class="list-updating">
+            <li>Recommender system (content based)</li>
+            <li>User can create account</li>
+            <li>Web analystics implementation (Traffic origin, CTR, web behaviour) without using GA</li>
+            <li>User generated content (reviews)</li>
+            
+        </ul>
+    </div>
+    
+</div>
+{% endblock %}
