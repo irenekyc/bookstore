@@ -2,10 +2,6 @@
 {% block title %}
 Welcome to Book Store
 {% endblock %}
-{% block localstyles %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'book_details.css' %}" />
-{% endblock %}
 {% block content %}
 {% if not error %}
 {% include '../partials/back_icon.html' %}
@@ -32,7 +28,7 @@ Welcome to Book Store
             <p>€ {{ book.price }}</p>
             {% if book.availablility %}
             <p class="color-success"> In Stock</p>
-            <button class="btn btn-add-to-cart" disabled>Cart Function coming soon</button>
+            {% include '../partials/add_to_basket.html' with book_slug=book.slug %}
             {% else %}
             <p class="color-error"> Out of Stock</p>
             {% endif %}

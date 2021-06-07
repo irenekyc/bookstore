@@ -97,3 +97,135 @@ main{
 .back-row a{
     cursor: pointer;
 }
+
+.cart-add{
+    cursor: pointer;
+    background: lightblue;
+    font-size:16px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 130px;
+}
+
+.icon-cart{
+    height: 16px;
+}
+
+.book-details-grid{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.book-details-grid h1{
+    width: 100%;
+}
+
+.book-details-content{
+    width: 100%;
+    margin: 2rem auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.book-details-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    min-height: 300px;
+    min-width: 300px !important;
+    max-width: 350px;
+    padding: 1rem;
+}
+
+.book-details-image img{
+    width: 100%;
+    height: auto;
+}
+
+.book-details-description{
+    padding: 1rem;
+    flex:1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.book-details-description *{
+    margin: 0.5rem 0;
+}
+
+.color-success{
+    color: green !important;
+}
+
+.color-error{
+    color: red !important;
+}
+
+.book-cards-grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.book-card{
+    width: 180px;
+    height: 240px;
+    background: #f1f1f1;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+}
+
+.book-card-image{
+    width: 100%;
+    height: 180px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.book-cover{
+    height: 180px;
+    width: auto;
+    max-width: 180px;
+}
+
+.book-card-details{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.book-card-details h2{
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+
+
+}
+.book-card-details-price{
+    width: 60px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+.book-card-details span{
+    font-size:0.7rem;
+    line-height: 1;
+}
