@@ -73,3 +73,27 @@ main{
     color: green;
     margin-left: 3px;
 }
+
+.pagination_row{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 950px;
+}
+
+.pagination_prev{
+    justify-self:flex-start
+}
+
+.pagination_next{
+    justify-self: flex-end;
+}
+
+.back-row{
+    margin: 1rem 0;
+}
+
+.back-row a{
+    cursor: pointer;
+}

@@ -68,6 +68,7 @@ TEMPLATES = [
             ],
             'libraries': {
                 'make_list': 'booknerd.templatetags.make_list',
+                'get_first_char': 'booknerd.templatetags.get_first_char'
             }
         },
     },

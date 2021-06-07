@@ -1,5 +1,11 @@
+{% load get_first_char %}
 <a href="{% url 'books:category_list' category_name=category %}">
     <div class="category-card">
+        <div class="category-card-image">
+            {% for c in category|get_first_char %}
+            {{c}}
+            {% endfor %}
+        </div>
         <h2>{{ category }}</h2>
     </div>
 </a>

@@ -8,7 +8,7 @@ Welcome to Book Store
 {% endblock %}
 {% block content %}
 {% if not error %}
-{% include '../partials/back_icon.html' with link="/" location="Home" %}
+{% include '../partials/back_icon.html' %}
 <div class="book-details-grid">
     <h1>{{book.title}}</h1>
     <div class="book-rating-row">
@@ -22,7 +22,7 @@ Welcome to Book Store
     <div class="book-details-content">
         <div class="book-details-image">
             {% if book.thumbnail != "" %}
-                <img src="http://books.toscrape.com/{{book.thumbnail}}" alt="{{ book.title }}">
+                <img src="http://books.toscrape.com/{{book.thumbnail}}" alt="{{ book.title }}" loading="lazy">
             {% else %}
                 {% include '../partials/image_unavailable.html' %}
             {% endif %}
